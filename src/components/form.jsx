@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "../assets/styles/form.css";
 import { useForm } from 'react-hook-form';
 
@@ -7,9 +7,9 @@ const Form = () => {
 
 	const onSubmit = (data) => {
 		console.log(data);
-		alert('Form submitted successfully!')
-		alert(`username: ${data.newUser} password: ${data.newPassword}`)
-	}
+		alert('Form submitted successfully!');
+		alert(`Username: ${data.newUser}\nPassword: ${data.newPassword}`);
+	};
 
 	const getPasswordMessageClass = (message) => {
 		if (message === 'Password is required') {
@@ -26,9 +26,10 @@ const Form = () => {
 		}
 		return '';
 	};
+
 	return (
 		<div className='form-new-credentials'>
-			<form action='' onSubmit={handleSubmit(onSubmit)} className='form-new-credentials__form'>
+			<form onSubmit={handleSubmit(onSubmit)} className='form-new-credentials__form'>
 				<p className='form-new-credentials__title'>New Credentials</p>
 
 				<div className='form-new-credentials__field'>
@@ -52,6 +53,7 @@ const Form = () => {
 					/>
 					{errors.newUser && <span className='form-new-credentials__message form-new-credentials__message--error'>{errors.newUser.message}</span>}
 				</div>
+
 				<div className='form-new-credentials__field'>
 					<label htmlFor="password" className='form-new-credentials__label'>New password</label>
 					<input
@@ -81,10 +83,11 @@ const Form = () => {
 						</span>
 					)}
 				</div>
+
 				<button type="submit" className='form-new-credentials__button'>Submit</button>
 			</form>
 		</div>
 	);
-}
+};
 
 export default Form;

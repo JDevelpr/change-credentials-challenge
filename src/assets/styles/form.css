@@ -91,3 +91,27 @@
 .form-new-credentials__message--error {
   color: red;
 }
+
+.form-new-credentials__message--success {
+  color: green;
+}
+
+.form-new-credentials__input:focus {
+  outline: none;
+}
+
+.form-new-credentials__input--error:focus {
+  border-color: red;
+}
+
+.form-new-credentials__input--weak:focus {
+  border-color: red;
+}
+
+.form-new-credentials__input--medium:focus {
+  border-color: orange;
+}
+
+.form-new-credentials__input--strong:focus {
+  border-color: green;
+}
